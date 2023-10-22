@@ -3,25 +3,53 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --bg: #fff;
+    --text: #212121;
+    --link: #88a;
+    --accent: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+    --accentr: linear-gradient(180deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    :root {
+        --bg: #fff;
+        --text: #212121;
+        --link: #88a;
+        --accent: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+        --accentr: linear-gradient(180deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+    }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.3em;
+    font-size: 18px;
+}
+
+.colourful {
+    background: var(--accent);
+    color: transparent;
+    background-clip: text;
+}
+
+.colourful-link {
+    background: var(--accent);
+    color: transparent;
+    background-clip: text;
+    background-size: 100%;
+    border-radius: 0.3em;
+    padding: 0 0.25em;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.colourful-link strong {
+    color: black;
+    background: none;
+}
+
+.colourful-link:hover {
+    background-clip: border-box;
+    color: var(--bg);
 }
