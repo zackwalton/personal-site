@@ -16,7 +16,8 @@ const eigerdals = localFont(
 
 export const metadata: Metadata = {
     title: 'Zack · Hello!',
-    description: 'Passionate developer from Canada.',
+    description: 'Hey, I\'m Zack! I am a software developer from Ottawa, Ontario, Canada. ' +
+        'I study Computer Science at Concordia University. Check out my experience and personal projects!',
 }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {

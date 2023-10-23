@@ -12,10 +12,10 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg: #fff;
-        --text: #212121;
+        --bg: #191919;
+        --text: #cecece;
         --link: #88a;
-        --accent: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+        --accent: linear-gradient(90deg, rgb(70, 138, 202), rgb(27, 56, 153), rgb(0, 166, 255));
         --accentr: linear-gradient(180deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
     }
 }
@@ -45,7 +45,7 @@ body {
 }
 
 .colourful-link strong {
-    color: black;
+    color: var(--text);
     background: none;
 }
 
