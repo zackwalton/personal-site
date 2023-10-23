@@ -23,7 +23,15 @@ export const metadata: Metadata = {
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-        <body className={`${openSans.variable} ${eigerdals.variable}`}>{children}</body>
+
+        <body className={`${openSans.variable} ${eigerdals.variable}`}>
+
+        <div className={"flex flex-nowrap items-center justify-center h-fit p"}>
+            <div className={"w-[1000px] h-fit mt-28"}>
+                {children}
+            </div>
+        </div>
+        </body>
         </html>
     )
 }
