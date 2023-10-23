@@ -1,0 +1,20 @@
+{
+  "name": "disclate",
+  "slug": "disclate",
+  "excerpt": "A translation bot for discord",
+  "features": [
+    "Translate messages in real time",
+    "Set up auto-translation for your whole server or specific categories, channels or threads",
+    "Create translation \"links\" between channels, so that messages sent in one channel are automatically translated and sent to another",
+    "Translate messages to multiple languages at once",
+    "Translate messages to unique languages such as English Pirate",
+    "Subscribe monthly to get a higher translation limit"
+  ],
+  "technologies": [
+    "Python",
+    "interactions.py (Discord API)",
+    "SQL",
+    "Google Cloud Translation API",
+    "GPT-4 API"
+  ]
+}
