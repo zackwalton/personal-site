@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^18",
     "react-dom": "^18",
-    "next": "13.5.6"
+    "next": "13.5.6",
+    "nextjs-breadcrumbs2": "^2.0.4"
   },
   "devDependencies": {
     "typescript": "^5",
