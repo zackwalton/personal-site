@@ -4,6 +4,7 @@ import SocialLinks from "@/components/SocialLinks";
 import BackButton from "@/components/BackButton";
 import { promises as sf, promises as fs } from "fs";
 import { ProjectData } from "@/app/types";
+import path from 'path';
 import { Metadata } from "next";
 
 export interface Props {
@@ -12,8 +13,10 @@ export interface Props {
     }
 }
 
+const projects_dir = path.resolve("./public", "projects");
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const data = await sf.readFile(`public/projects/${params.slug}.json`, "utf-8");
+    const data = await sf.readFile(projects_dir + `/${params.slug}.json`, "utf-8");
     const project: ProjectData = JSON.parse(data) as ProjectData;
 
     return {
@@ -24,7 +27,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Project({ params }: Props) {
-    const data = await fs.readFile(process.cwd() + `/public/projects/${params.slug}.json`, "utf-8");
+
+    const data = await fs.readFile(projects_dir + `/${params.slug}.json`, "utf-8");
     const project: ProjectData = JSON.parse(data) as ProjectData;
 
     const features = project.features?.map((feature: string, index: number) => {
