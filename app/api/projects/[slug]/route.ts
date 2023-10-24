@@ -10,7 +10,7 @@ interface Context {
 
 
 export async function GET(request: Request, { params }: Context): Promise<NextResponse<ProjectData>> {
-    const data = await sf.readFile(`public/projects/${params.slug}.json`, "utf-8");
+    const data = await sf.readFile(process.cwd() + `/public/projects/${params.slug}.json`, "utf-8");
     const project: ProjectData = JSON.parse(data) as ProjectData;
 
     return NextResponse.json(project);
