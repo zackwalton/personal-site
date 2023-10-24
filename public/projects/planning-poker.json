@@ -1,18 +1,21 @@
 {
-  "name": "Planning Poker",
+  "name": "Planning Poker (WIP)",
   "slug": "planning-poker",
-  "excerpt": "A web app for hosting sprint planning pointing sessions for .",
-  "description": "This planning poker app uses Next.js, React, and websockets to provide a real-time and interactive experience for sprint planning pointing sessions.",
+  "info_url": "",
+  "deployment_url": "",
+  "repository_url": "https://github.com/zackwalton/pointing-poker",
+  "excerpt": "A web app for hosting sprint planning poker sessions with your team",
   "features": [
-    "Create a planning poker session and have your team join with a unique url",
-    "Real-time updates to the session as users join and vote using websockets",
+    "Create a planning poker session and have your team join with a unique url (no login required)",
+    "Quick and interactive components running on the client side (Material UI)",
+    "Real-time updates to the session as users join and vote using websockets (socket.io)",
     "Choose from various pointing decks (Fibonacci, T-Shirt, etc.)"
   ],
   "technologies": [
-    "Python",
-    "interactions.py (Discord API)",
-    "SQL",
-    "Google Cloud Translation API",
-    "GPT-4 API"
+    "Websockets (socket.io)",
+    "Next.js",
+    "React",
+    "Redis",
+    "Material UI (MUI)"
   ]
 }
