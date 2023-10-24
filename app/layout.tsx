@@ -15,17 +15,15 @@ const eigerdals = localFont(
     })
 
 export const metadata: Metadata = {
-    title: 'Zack · Hello!',
-    description: 'Hey, I\'m Zack! I am a software developer from Ottawa, Ontario, Canada. ' +
-        'I study Computer Science at Concordia University. Check out my experience and personal projects!',
+    title: 'Zachary Walton',
+    description: 'Hey, I\'m Zack! I am a software developer from Ottawa. I study Computer Science at ' +
+        'Concordia University. Check out my experience and personal projects!',
 }
 
 export default function RootLayout({children,}: { children: React.ReactNode }) {
     return (
         <html lang="en">
-
         <body className={`${openSans.variable} ${eigerdals.variable}`}>
-
         <div className={"flex flex-nowrap items-center justify-center h-fit p"}>
             <div className={"w-[1000px] h-fit mt-28"}>
                 {children}

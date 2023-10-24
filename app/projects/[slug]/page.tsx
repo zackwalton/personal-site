@@ -2,6 +2,7 @@ import React from 'react';
 import { promises as sf } from "fs";
 import ProjectLinks from "@/components/ProjectLinks";
 import SocialLinks from "@/components/SocialLinks";
+import { Metadata, ResolvingMetadata } from "next";
 
 interface Props {
     params: {
@@ -21,7 +22,20 @@ interface ProjectData {
     technologies: string[]
 }
 
-export default async function Project({params}: Props) {
+
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+
+    const data = await sf.readFile(`public/projects/${params.slug}.json`, "utf-8");
+    const project: ProjectData = JSON.parse(data) as ProjectData;
+
+    return {
+        title: `Project: ${project.name}`,
+        description: project.excerpt,
+        keywords: project.technologies
+    }
+}
+
+export default async function Project({ params }: Props) {
     const slug = params.slug;
     const data = await sf.readFile(`public/projects/${slug}.json`, "utf-8");
     const project: ProjectData = JSON.parse(data) as ProjectData;

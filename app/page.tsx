@@ -15,16 +15,17 @@ export default function Home() {
 
             <div className={"mt-32"}>
                 <a href="projects/disclate" className={"colourful-link text-6xl font-eigerdals"}
-                   style={{lineHeight: "1.3em"}}>disclate<strong>, translation bot</strong></a>
+                   style={{ lineHeight: "1.3em" }}>disclate<strong>, translation bot</strong></a>
                 <p className={"text-xs text-gray-500 pl-5"}>Python, SQL, Discord API, Google Cloud Translation API,
                     GPT-4 API</p><br />
 
                 <a href="projects/planning-poker" className={"colourful-link text-6xl font-eigerdals"}
-                   style={{lineHeight: "1.3em"}}>sprint plan <strong>&</strong> websockets</a><br />
+                   style={{ lineHeight: "1.3em" }}>sprint plan <strong>&</strong> websockets</a><br />
                 <p className={"text-xs text-gray-500 pl-5"}>Web Sockets (socket.io), Next.js, React, Redis, MUI</p>
                 <br />
 
-                <a href="#" className={"colourful-link text-6xl font-eigerdals"} style={{lineHeight: "1.3em"}}>
+                <a href="projects/" className={"colourful-link text-6xl font-eigerdals"}
+                   style={{ lineHeight: "1.3em" }}>
                     security <strong>, </strong>graphics<strong> & </strong>more</a>
                 <p className={"text-xs text-gray-500 pl-5"}>More projects!</p><br />
 
