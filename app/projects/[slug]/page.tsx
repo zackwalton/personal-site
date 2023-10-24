@@ -16,7 +16,7 @@ export interface Props {
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function Project({ params }: Props) {
-    const { data, error, isLoading } = useSWR(`/api/projects/${params.slug}`, fetcher);
+    const { data, error, isLoading } = useSWR(`/api/projects/${params.slug}`, fetcher, { dedupingInterval: 60000});
 
     if (isLoading) return <LoadingIndicator message={"Loading project..."} />
     if (error) return <div>Failed to load project.</div>

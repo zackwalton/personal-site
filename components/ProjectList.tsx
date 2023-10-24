@@ -7,7 +7,7 @@ import LoadingIndicator from "@/components/LoadingIndicator";
 const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
 export default function ProjectList() {
-    const { data, error, isLoading } = useSWR('/api/projects', fetcher);
+    const { data, error, isLoading } = useSWR('/api/projects', fetcher, { dedupingInterval: 60000});
 
     if (isLoading) return <LoadingIndicator message={"Loading projects"} />
 
