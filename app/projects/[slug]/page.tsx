@@ -1,11 +1,10 @@
-'use client'
-
 import React from 'react';
 import ProjectLinks from "@/components/ProjectLinks";
 import SocialLinks from "@/components/SocialLinks";
 import BackButton from "@/components/BackButton";
-import useSWR from "swr";
-import LoadingIndicator from "@/components/LoadingIndicator";
+import { promises as sf, promises as fs } from "fs";
+import { ProjectData } from "@/app/types";
+import { Metadata } from "next";
 
 export interface Props {
     params: {
@@ -13,21 +12,28 @@ export interface Props {
     }
 }
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json())
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const data = await sf.readFile(`public/projects/${params.slug}.json`, "utf-8");
+    const project: ProjectData = JSON.parse(data) as ProjectData;
 
-export default function Project({ params }: Props) {
-    const { data, error, isLoading } = useSWR(`/api/projects/${params.slug}`, fetcher, { dedupingInterval: 60000});
+    return {
+        title: `Project: ${project.name}`,
+        description: project.excerpt,
+        keywords: project.technologies
+    }
+}
 
-    if (isLoading) return <LoadingIndicator message={"Loading project..."} />
-    if (error) return <div>Failed to load project.</div>
+export default async function Project({ params }: Props) {
+    const data = await fs.readFile(process.cwd() + `/public/projects/${params.slug}.json`, "utf-8");
+    const project: ProjectData = JSON.parse(data) as ProjectData;
 
-    const features = data.features?.map((feature: string, index: number) => {
+    const features = project.features?.map((feature: string, index: number) => {
         return <li key={index}>{feature}</li>
     });
 
-    const technologies = data.technologies.map((technology: string, index: number) => {
+    const technologies = project.technologies.map((technology: string, index: number) => {
         let string = technology
-        if (index !== data.technologies.length - 1) {
+        if (index !== project.technologies.length - 1) {
             string += " · "
         }
         return string
@@ -35,16 +41,16 @@ export default function Project({ params }: Props) {
 
 
     return <div>
-        <BackButton projectName={data.name} />
+        <BackButton projectName={project.name} />
         <div className={"mt-10"}>
-            <a href={"/"} className={"text-5xl font-eigerdals colourful"}>{data.name}</a>
+            <a href={"/"} className={"text-5xl font-eigerdals colourful"}>{project.name}</a>
         </div>
-        <ProjectLinks info_url={data.info_url}
-                      deployment_url={data.deployment_url}
-                      repository_url={data.repository_url} />
-        <p className={"mt-7"}>{data.excerpt}.</p>
-        <p className={"mt-7"}>{data.description}</p>
-        <p className={"mt-7 text-xl colourful font-eigerdals"}>Features:</p>
+        <ProjectLinks info_url={project.info_url}
+                      deployment_url={project.deployment_url}
+                      repository_url={project.repository_url} />
+        <p className={"mt-5"}>{project.excerpt}.</p>
+        <p className={"mt-7"}>{project.description}</p>
+        <p className={"mt-14 text-xl colourful font-eigerdals"}>Features:</p>
         <ul className={"list-disc pl-8 leading-10"}>
             {features}
         </ul>
