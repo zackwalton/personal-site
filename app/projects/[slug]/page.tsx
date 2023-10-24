@@ -1,67 +1,49 @@
+'use client'
+
 import React from 'react';
-import { promises as sf } from "fs";
 import ProjectLinks from "@/components/ProjectLinks";
 import SocialLinks from "@/components/SocialLinks";
-import { Metadata, ResolvingMetadata } from "next";
+import BackButton from "@/components/BackButton";
+import useSWR from "swr";
+import LoadingIndicator from "@/components/LoadingIndicator";
 
-interface Props {
+export interface Props {
     params: {
         slug: string
     }
 }
 
-interface ProjectData {
-    name: string
-    slug: string
-    info_url: string
-    deployment_url: string
-    repository_url: string
-    excerpt: string
-    description: string
-    features: string[]
-    technologies: string[]
-}
+const fetcher = (url: string) => fetch(url).then((res) => res.json())
 
+export default function Project({ params }: Props) {
+    const { data, error, isLoading } = useSWR(`/api/projects/${params.slug}`, fetcher);
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+    if (isLoading) return <LoadingIndicator message={"Loading project..."} />
+    if (error) return <div>Failed to load project.</div>
 
-    const data = await sf.readFile(`public/projects/${params.slug}.json`, "utf-8");
-    const project: ProjectData = JSON.parse(data) as ProjectData;
-
-    return {
-        title: `Project: ${project.name}`,
-        description: project.excerpt,
-        keywords: project.technologies
-    }
-}
-
-export default async function Project({ params }: Props) {
-    const slug = params.slug;
-    const data = await sf.readFile(`public/projects/${slug}.json`, "utf-8");
-    const project: ProjectData = JSON.parse(data) as ProjectData;
-
-    const features = project.features?.map((feature, index) => {
+    const features = data.features?.map((feature: string, index: number) => {
         return <li key={index}>{feature}</li>
     });
 
-    const technologies = project.technologies.map((technology, index) => {
+    const technologies = data.technologies.map((technology: string, index: number) => {
         let string = technology
-        if (index !== project.technologies.length - 1) {
+        if (index !== data.technologies.length - 1) {
             string += " · "
         }
         return string
     });
 
+
     return <div>
-        <a href={"/"} className={"font-eigerdals"}>⬅ Zachary Walton</a><br />
+        <BackButton projectName={data.name} />
         <div className={"mt-10"}>
-            <a href={"/"} className={"text-5xl font-eigerdals colourful"}>{project.name}</a>
+            <a href={"/"} className={"text-5xl font-eigerdals colourful"}>{data.name}</a>
         </div>
-        <ProjectLinks info_url={project.info_url}
-                      deployment_url={project.deployment_url}
-                      repository_url={project.repository_url} />
-        <p className={"mt-7"}>{project.excerpt}.</p>
-        <p className={"mt-7"}>{project.description}</p>
+        <ProjectLinks info_url={data.info_url}
+                      deployment_url={data.deployment_url}
+                      repository_url={data.repository_url} />
+        <p className={"mt-7"}>{data.excerpt}.</p>
+        <p className={"mt-7"}>{data.description}</p>
         <p className={"mt-7 text-xl colourful font-eigerdals"}>Features:</p>
         <ul className={"list-disc pl-8 leading-10"}>
             {features}
