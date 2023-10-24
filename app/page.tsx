@@ -11,7 +11,7 @@ export default function Home() {
             <p className={"mt-24"}>
                 I’m from <span className={"italic"}>Ottawa, Ontario</span> living in <span className={"italic"}>Montréal, Canada</span>.<br />
                 I study Computer Science at Concordia University.<br />
-                I develop web and python apps!</p>
+                I build full-stack web and python applications!</p>
 
 
             <div className={"mt-32"}>
@@ -20,7 +20,7 @@ export default function Home() {
                 <p className={"text-xs text-gray-500 pl-5"}>Python, SQL, Discord API, Google Cloud Translation API,
                     GPT-4 API</p><br />
 
-                <a href="project/pointing-poker" className={"colourful-link text-6xl font-eigerdals"}
+                <a href="project/planning-poker" className={"colourful-link text-6xl font-eigerdals"}
                    style={{lineHeight: "1.3em"}}>sprint plan <strong>&</strong> websockets</a><br />
                 <p className={"text-xs text-gray-500 pl-5"}>Web Sockets (socket.io), Next.js, React, Redis, MUI</p>
                 <br />
