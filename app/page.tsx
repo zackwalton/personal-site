@@ -1,9 +1,8 @@
+import SocialLinks from "@/components/SocialLinks";
+import React from "react";
+
 export default function Home() {
 
-    // define social urls
-    const github: string = "https://github.com/zackwalton";
-    const linkedIn: string = "https://www.linkedin.com/in/walton-zachary/";
-    const email: string = "mailto:zackwalton15@gmail.com";
     return (
         <div>
             <a href={"/"} className={"text-5xl font-bold font-eigerdals"}>Zachary <span
@@ -30,11 +29,7 @@ export default function Home() {
                 <p className={"text-xs text-gray-500 pl-5"}>More projects!</p><br />
 
             </div>
-            <div className={"mt-32 font-bold"}>
-                <a href={github} target={"_blank"} className={"colourful-link"}>GitHub</a>&nbsp;·&nbsp;
-                <a href={linkedIn} target={"_blank"} className={"colourful-link"}>LinkedIn</a>&nbsp;·&nbsp;
-                <a href={email} target={"_blank"} className={"colourful-link"}>Email</a>
-            </div>
+            <SocialLinks className={"mt-32 pb-4"} />
         </div>
     )
 }

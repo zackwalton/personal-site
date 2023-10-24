@@ -8,9 +8,9 @@
   "features": [
     "Translate messages in real time using the Discord API alongside the Google Cloud Translation API",
     "Set up auto-translation for your whole server or specific categories, channels or threads",
-    "Create translation \"links\" between channels, so that messages sent in one channel are automatically translated and sent to another",
+    "Create translation \"links\" between channels, messages are then automatically translated and sent to all linked channels",
     "Translate messages to multiple languages at once (Google Cloud Translation API)",
-    "Translate messages to unique languages such as English Pirate (GPT3.5 & GPT4 API)",
+    "Translate messages to fun languages such as English Pirate (that be the GPT3.5 & GPT4 API)",
     "Guild owners will be able to purchase a monthly subscription to get a higher translation character limits"
   ],
   "technologies": [

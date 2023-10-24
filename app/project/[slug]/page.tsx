@@ -1,6 +1,7 @@
 import React from 'react';
 import { promises as sf } from "fs";
 import ProjectLinks from "@/components/ProjectLinks";
+import SocialLinks from "@/components/SocialLinks";
 
 interface Props {
     params: {
@@ -9,15 +10,15 @@ interface Props {
 }
 
 interface ProjectData {
-    name?: string
-    slug?: string
-    info_url?: string
-    deployment_url?: string
-    repository_url?: string
-    excerpt?: string
-    description?: string
-    features?: string[]
-    technologies?: string[]
+    name: string
+    slug: string
+    info_url: string
+    deployment_url: string
+    repository_url: string
+    excerpt: string
+    description: string
+    features: string[]
+    technologies: string[]
 }
 
 export default async function Project({params}: Props) {
@@ -27,6 +28,14 @@ export default async function Project({params}: Props) {
 
     const features = project.features?.map((feature, index) => {
         return <li key={index}>{feature}</li>
+    });
+
+    const technologies = project.technologies.map((technology, index) => {
+        let string = technology
+        if (index !== project.technologies.length - 1) {
+            string += " · "
+        }
+        return string
     });
 
     return <div>
@@ -44,5 +53,11 @@ export default async function Project({params}: Props) {
             {features}
         </ul>
 
+        <p className={"mt-7 text-xl colourful font-eigerdals"}>Languages, Frameworks, and Libraries:</p>
+        <p className={"pl-8 leading-10"}>{technologies}</p>
+        <div className={"mt-14"}>
+            Still curious? Reach out to me:
+            <SocialLinks className={"mt-4 pb-4 pl-6"} />
+        </div>
     </div>
 }
