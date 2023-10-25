@@ -14,13 +14,13 @@ export default function ProjectList() {
     if (error) return <div>Failed to load projects.</div>
 
     const projects = data.map((project: any, index: number) => {
-        return <li key={index} className={"leading-relaxed"}>
+        return <li key={index} className={"leading-10"}>
             <a href={`/projects/${project.slug}`}
-               className={"colourful-link text-2xl font-eigerdals"}>{project.name}</a> - {project.excerpt}
+               className={"colourful-link text-2xl font-eigerdals"}>{project.name}</a> - {project.excerpt}.
         </li>
     });
 
-    return <ul className={"flex flex-col flex-nowrap mt-7"}>
+    return <ul className={"flex flex-col flex-nowrap mt-7 pl-2"}>
         {projects}
     </ul>
 }

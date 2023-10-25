@@ -10,7 +10,7 @@ export default function ProjectLinks({info_url, deployment_url, repository_url}:
   return (
     <div className={"text-gray-500 text-sm font-eigerdals mt-3"}>
       {info_url && info_url.length > 0
-        ? <a href={info_url} target="_blank" className="colourful-link font-eigerdals">{info_url}</a>
+        ? <a href={"https://" + info_url} target="_blank" className="colourful-link font-eigerdals">{info_url}</a>
         : "No info website"}
       <span> · </span>
       {deployment_url && deployment_url.length > 0

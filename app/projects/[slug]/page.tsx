@@ -62,7 +62,7 @@ export default async function Project({ params }: Props) {
         <p className={"mt-7 text-xl colourful font-eigerdals"}>Languages, Frameworks, and Libraries:</p>
         <p className={"pl-8 leading-10"}>{technologies}</p>
         <div className={"mt-14"}>
-            Still curious? Reach out to me:
+            Connect with me!
             <SocialLinks className={"mt-4 pb-4 pl-6"} />
         </div>
     </div>

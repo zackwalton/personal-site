@@ -13,7 +13,7 @@ export default function Projects() {
     return <div>
         <BackButton />
         <p className={"text-5xl font-eigerdals mt-10"}>Projects:</p>
-        <div className={"flex flex-col flex-nowrap mt-7"}>
+        <div className={"flex flex-col flex-nowrap"}>
             <ProjectList />
         </div>
     </div>
