@@ -4,7 +4,7 @@
   "site_url": "",
   "deployment_url": "",
   "repository_url": "",
-  "excerpt": "A translation bot for Discord",
+  "excerpt": "A translation bot built with python and the Discord API",
   "features": [
     "Translate messages in real time using the Discord API alongside the Google Cloud Translation API",
     "Set up auto-translation for your whole server or specific categories, channels or threads",

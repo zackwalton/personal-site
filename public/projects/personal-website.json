@@ -1,0 +1,21 @@
+{
+  "name": "Personal website",
+  "slug": "personal-website",
+  "info_url": "zackwalton.com",
+  "deployment_url": "https://www.zackwalton.com/",
+  "repository_url": "https://github.com/zackwalton/personal-site",
+  "excerpt": "My personal website to showcase my work and project experience as a developer",
+  "features": [
+    "Responsive website using both server-side and client-side rendering (Next.js, React)",
+    "Continuous deployment (CD) using Vercel",
+    "Tailwind CSS + CSS for quick styling and prototyping",
+    "Full end-to-end type safety using TypeScript"
+  ],
+  "technologies": [
+    "Next.js (App directory)",
+    "React",
+    "Vercel",
+    "Tailwind CSS",
+    "TypeScript"
+  ]
+}

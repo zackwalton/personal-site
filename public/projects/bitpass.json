@@ -1,0 +1,20 @@
+{
+  "name": "bitpass",
+  "slug": "bitpass",
+  "info_url": "",
+  "deployment_url": "",
+  "repository_url": "https://github.com/zackwalton/bitpass",
+  "excerpt": "A powerful and easy-to-use secure password generation and analysis tool",
+  "features": [
+    "Generate passwords of various complexities (varying lengths, character sets, etc.)",
+    "Analyse passwords for strength and security against brute force attacks",
+    "Learn about what makes a password strong and secure as you play with our tool"
+  ],
+  "technologies": [
+    "Electron",
+    "React",
+    "Javascript",
+    "Tailwind CSS",
+    "HTML"
+  ]
+}
