@@ -4,8 +4,6 @@ import localFont from 'next/font/local'
 import './globals.css'
 import React from "react";
 import ThemeHandler from "@/components/ThemeHandler";
-import Script from "next/script";
-import { cookies } from "next/headers";
 
 const openSans = Open_Sans({
     variable: '--font-open-sans',

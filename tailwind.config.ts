@@ -10,9 +10,9 @@ const config: Config = {
     theme: {
         extend: {
             animation: {
-                fade: 'fadeIn 3.5s ease-in-out',
+                fade: 'fadeIn 1s cubic-bezier(0.74, -0.02, 1, -0.15)',
             },
-            keyframes: theme => ({
+            keyframes: () => ({
                 fadeIn: {
                     '0%': { color: 'transparent' },
                     '100%': { color: 'inherit' },
