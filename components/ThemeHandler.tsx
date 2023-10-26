@@ -27,7 +27,7 @@ export default function ThemeHandler() {
 
 
     return (
-        <button type="button" className={"fixed bottom-5 right-5 text-3xl animate-fade"}
+        <button type="button" className={"absolute top-5 right-5 text-3xl animate-fade"}
                 onClick={() => (darkMode ? changeThemeHandler('light') : changeThemeHandler('dark'))}>
             {darkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
         </button>

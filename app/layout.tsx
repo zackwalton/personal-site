@@ -37,9 +37,9 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
                     } catch (_) {}
                   `
             }} />
-        <ThemeHandler />
         <div className={"flex flex-nowrap items-center justify-center h-fit"}>
-            <div className={"w-[1000px] h-fit mt-28"}>
+            <div className={"relative w-[1000px] h-fit mt-28"}>
+                <ThemeHandler />
                 {children}
             </div>
         </div>
