@@ -9,6 +9,15 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            animation: {
+                fade: 'fadeIn 3.5s ease-in-out',
+            },
+            keyframes: theme => ({
+                fadeIn: {
+                    '0%': { color: 'transparent' },
+                    '100%': { color: 'inherit' },
+                },
+            }),
             colors: {
                 'light-accent': 'var(--light-accent)',
                 'dark-accent': 'var(--dark-accent)',

@@ -3,6 +3,9 @@ import { Open_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
 import React from "react";
+import ThemeHandler from "@/components/ThemeHandler";
+import Script from "next/script";
+import { cookies } from "next/headers";
 
 const openSans = Open_Sans({
     variable: '--font-open-sans',
@@ -20,10 +23,23 @@ export const metadata: Metadata = {
         'Concordia University. Check out my experience and personal projects!',
 }
 
-export default function RootLayout({children,}: { children: React.ReactNode }) {
+export default function RootLayout({ children, }: { children: React.ReactNode }) {
     return (
-        <html lang="en" className={"dark"}>
-        <body className={`${openSans.variable} ${eigerdals.variable}` + " bg-white text-[--text-light] dark:bg-[--bg-dark] dark:text-[--text-dark]"}>
+        <html lang="en" suppressHydrationWarning>
+        <body className={`${openSans.variable} ${eigerdals.variable}` +
+            " bg-white text-[--text-light] dark:bg-[--bg-dark] dark:text-[--text-dark]"}>
+        <script dangerouslySetInnerHTML={{
+                __html: `
+                    try {
+                      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark')
+                      } else {
+                        document.documentElement.classList.remove('dark')
+                      }
+                    } catch (_) {}
+                  `
+            }} />
+        <ThemeHandler />
         <div className={"flex flex-nowrap items-center justify-center h-fit"}>
             <div className={"w-[1000px] h-fit mt-28"}>
                 {children}
