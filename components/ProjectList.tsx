@@ -16,7 +16,7 @@ export default function ProjectList() {
     const projects = data.map((project: any, index: number) => {
         return <li key={index} className={"leading-10"}>
             <a href={`/projects/${project.slug}`}
-               className={"colourful-link text-2xl font-eigerdals"}>{project.name}</a> - {project.excerpt}.
+               className={"light-accent light-link dark:dark-accent dark:dark-link text-2xl font-eigerdals"}>{project.name}</a> - {project.excerpt}.
         </li>
     });
 

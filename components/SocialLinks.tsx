@@ -9,8 +9,8 @@ export default function SocialLinks({ className }: SocialLinksProps) {
     const email: string = "mailto:zackwalton15@gmail.com";
 
     return <div className={`${className}`}>
-                <a href={github} target={"_blank"} className={"colourful-link"}>GitHub</a>&nbsp;·&nbsp;
-                <a href={linkedIn} target={"_blank"} className={"colourful-link"}>LinkedIn</a>&nbsp;·&nbsp;
-                <a href={email} target={"_blank"} className={"colourful-link"}>Email</a>
+                <a href={github} target={"_blank"} className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>GitHub</a>&nbsp;·&nbsp;
+                <a href={linkedIn} target={"_blank"} className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>LinkedIn</a>&nbsp;·&nbsp;
+                <a href={email} target={"_blank"} className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>Email</a>
             </div>
 }

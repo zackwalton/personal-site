@@ -1,6 +1,7 @@
-import type {Config} from 'tailwindcss'
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
+    darkMode: 'class',
     content: [
         './pages/**/*.{js,ts,jsx,tsx,mdx}',
         './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,6 +9,10 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            colors: {
+                'light-accent': 'var(--light-accent)',
+                'dark-accent': 'var(--dark-accent)',
+            },
             screens: {
                 'sm': '1050px'
             },

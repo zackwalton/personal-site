@@ -3,53 +3,63 @@
 @tailwind utilities;
 
 :root {
-    --bg: #fff;
-    --text: #212121;
+    --bg-light: #fff;
+    --bg-dark: #191919;
+
+    --text-light: #212121;
+    --text-dark: #cecece;
+
     --link: #88a;
-    --accent: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+    --light-accent: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+    --dark-accent: linear-gradient(90deg, rgb(70, 138, 202), rgb(27, 56, 153), rgb(0, 166, 255));
     --accentr: linear-gradient(180deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #191919;
-        --text: #cecece;
-        --link: #88a;
-        --accent: linear-gradient(90deg, rgb(70, 138, 202), rgb(27, 56, 153), rgb(0, 166, 255));
-        --accentr: linear-gradient(180deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
-    }
-}
-
 body {
-    color: var(--text);
-    background: var(--bg);
     line-height: 1.3em;
     font-size: 18px;
 }
 
-.colourful {
-    background: var(--accent);
-    color: transparent;
-    background-clip: text;
-}
+@layer components {
+    .light-accent {
+        background: linear-gradient(90deg, #ffc23c, #fe759b, #ce7fbd, #79a2f4);
+        color: transparent;
+        background-clip: text;
+    }
 
-.colourful-link {
-    background: var(--accent);
-    color: transparent;
-    background-clip: text;
-    background-size: 100%;
-    border-radius: 0.3em;
-    padding: 0 0.25em;
-    text-transform: uppercase;
-    font-weight: 800;
-}
+    .dark-accent {
+        background: linear-gradient(90deg, rgb(70, 138, 202), rgb(27, 56, 153), rgb(0, 166, 255));
+        color: transparent;
+        background-clip: text;
+    }
 
-.colourful-link strong {
-    color: var(--text);
-    background: none;
-}
+    .light-link, .dark-link {
+        background-size: 100%;
+        border-radius: 0.3em;
+        padding: 0 0.25em;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
 
-.colourful-link:hover {
-    background-clip: border-box;
-    color: var(--bg);
+    .light-link strong {
+        color: var(--text-light);
+        background: none;
+    }
+
+    .light-link:hover {
+        color: var(--bg-light);
+        background-clip: border-box;
+    }
+
+    .dark-link strong {
+        color: var(--text-dark);
+        background: none;
+    }
+
+    .dark-link:hover {
+        color: var(--bg-dark);
+        background-clip: border-box;
+    }
+
+
 }

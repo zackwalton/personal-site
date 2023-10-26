@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default function LoadingIndicator({ message }: Props) {
-    return <div className={"flex flow-row colourful pl-8 mt-7"}>
+    return <div className={"flex flow-row light-accent dark:dark-accent pl-8 mt-7"}>
         <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-400" xmlns="http://www.w3.org/2000/svg" fill="none"
              viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
