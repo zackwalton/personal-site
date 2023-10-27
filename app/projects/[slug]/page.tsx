@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const project: ProjectData = JSON.parse(data) as ProjectData;
 
     return {
-        title: `Project: ${project.name}`,
+        title: `Project | ${project.name}`,
         description: project.excerpt,
         keywords: project.technologies
     }
@@ -32,7 +32,7 @@ export default async function Project({ params }: Props) {
     const project: ProjectData = JSON.parse(data) as ProjectData;
 
     const features = project.features?.map((feature: string, index: number) => {
-        return <li key={index}>{feature}</li>
+        return <li key={index} className={"mt-4"}>{feature}</li>
     });
 
     const technologies = project.technologies.map((technology: string, index: number) => {
@@ -46,8 +46,8 @@ export default async function Project({ params }: Props) {
 
     return <div>
         <BackButton projectName={project.name} />
-        <div className={"mt-10"}>
-            <a href={"/"} className={"text-5xl font-eigerdals light-accent dark:dark-accent"}>{project.name}</a>
+        <div className={"mt-5 md:mt-10"}>
+            <p className={"text-3xl md:text-5xl font-eigerdals light-accent dark:dark-accent"}>{project.name}</p>
         </div>
         <ProjectLinks info_url={project.info_url}
                       deployment_url={project.deployment_url}
@@ -55,12 +55,12 @@ export default async function Project({ params }: Props) {
         <p className={"mt-5"}>{project.excerpt}.</p>
         <p className={"mt-7"}>{project.description}</p>
         <p className={"light-accent dark:dark-accent font-eigerdals mt-14 text-xl"}>Features:</p>
-        <ul className={"list-disc pl-8 leading-10"}>
+        <ul className={"list-disc pl-8"}>
             {features}
         </ul>
 
         <p className={"light-accent dark:dark-accent font-eigerdals mt-7 text-xl "}>Languages, Frameworks, and Libraries:</p>
-        <p className={"leading-10 pl-8 "}>{technologies}</p>
+        <p className={"pl-8 "}>{technologies}</p>
         <div className={"mt-14"}>
             Connect with me!
             <SocialLinks className={"mt-4 pb-4 pl-6"} />

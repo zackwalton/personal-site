@@ -22,9 +22,6 @@ const config: Config = {
                 'light-accent': 'var(--light-accent)',
                 'dark-accent': 'var(--dark-accent)',
             },
-            screens: {
-                'sm': '1050px'
-            },
             fontFamily: {
                 eigerdals: ['var(--font-eigerdals)'],
                 open_sans: ['var(--font-open-sans)']

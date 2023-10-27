@@ -1,6 +1,6 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import { MdOutlineLightMode, MdOutlineDarkMode } from 'react-icons/md';
+import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 export default function ThemeHandler() {
 
@@ -11,23 +11,28 @@ export default function ThemeHandler() {
     }, [])
 
     function initDarkMode() {
-        const darkModeString = localStorage.theme;
-        setDarkMode(darkModeString === 'dark');
+        const darkModeString: string | undefined = localStorage.theme;
+        if (darkModeString !== undefined)
+            // Set dark mode based on local storage
+            setDarkMode(darkModeString === 'dark');
+        else
+            // Set dark mode based on OS preferred
+            setDarkMode(window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
 
     function changeThemeHandler(theme: string) {
-        if (theme === 'dark') {
+        if (theme === 'dark')
             document.documentElement.classList.add('dark')
-        } else {
+        else
             document.documentElement.classList.remove('dark')
-        }
+
         setDarkMode(theme === 'dark');
         localStorage.theme = theme;
     }
 
 
     return (
-        <button type="button" className={"absolute top-5 right-5 text-3xl animate-fade"}
+        <button type="button" className={"fixed bottom-7 right-7 text-3xl animate-fade"}
                 onClick={() => (darkMode ? changeThemeHandler('light') : changeThemeHandler('dark'))}>
             {darkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
         </button>
