@@ -32,7 +32,7 @@ export default function ThemeHandler() {
 
 
     return (
-        <button type="button" className={"fixed bottom-7 right-7 text-3xl animate-fade"}
+        <button type="button" className={"fixed bottom-7 right-7 text-3xl animate-fade"} aria-label={"Change to " + (darkMode ? "light" : "dark") + " mode"}
                 onClick={() => (darkMode ? changeThemeHandler('light') : changeThemeHandler('dark'))}>
             {darkMode ? <MdOutlineDarkMode /> : <MdOutlineLightMode />}
         </button>
