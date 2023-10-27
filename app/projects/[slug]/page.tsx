@@ -11,6 +11,12 @@ export interface Props {
     }
 }
 
+export async function generateStaticParams() {
+    return Object.values(projects).map((project: any) => ({
+        params: { slug: project.slug },
+    }))
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const project = projects[params.slug]
 
@@ -49,8 +55,10 @@ export default async function Project({ params }: Props) {
             {features}
         </ul>
 
-        <p className={"light-accent dark:dark-accent font-eigerdals mt-7 text-xl mb-4"}>
-            Languages, Frameworks, and Libraries:</p>
+        <p className={"hidden md:block light-accent dark:dark-accent font-eigerdals mt-7 text-xl mb-4"}>
+            Languages, Frameworks, & Libraries:</p>
+        <p className={"block md:hidden light-accent dark:dark-accent font-eigerdals mt-7 text-xl mb-4"}>
+            Languages & Frameworks:</p>
         <p className={"pl-8"}>{technologies}</p>
         <div className={"mt-14"}>Connect with me!<SocialLinks className={"mt-4 pb-4 pl-6"} /></div>
     </div>
