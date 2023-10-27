@@ -34,7 +34,7 @@ export default function Home() {
 
                 <Link href={`projects/${project2}`}
                       className={"light-accent light-link dark:dark-accent dark:dark-link "}>
-                    sprint plan <strong>&</strong> websockets</Link><br />
+                    scrum <strong>&</strong> websockets</Link><br />
                 <p className={"text-xs pl-2 md:pl-5 pt-1 md:pt-5"}>
                     Web Sockets (socket.io), Next.js, React, Redis, MUI
                 </p><br />
