@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function Projects() {
     return <div>
         <BackButton />
-        <p className={"text-5xl font-eigerdals mt-10"}>Projects:</p>
+        <p className={"text-4xl md:text-5xl font-eigerdals mt-10"}>Projects:</p>
         <div className={"flex flex-col flex-nowrap"}>
             <ProjectList />
         </div>
