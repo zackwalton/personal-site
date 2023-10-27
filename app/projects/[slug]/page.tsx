@@ -4,6 +4,7 @@ import SocialLinks from "@/components/SocialLinks";
 import BackButton from "@/components/BackButton";
 import { Metadata } from "next";
 import projects from "@/app/projects";
+import ProjectNotFound from "@/app/projects/[slug]/ProjectNotFound";
 
 export interface Props {
     params: {
@@ -20,6 +21,13 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const project = projects[params.slug]
 
+    if (project === undefined)
+        return {
+            title: "Project | Not found",
+            description: "Project not found"
+        }
+
+
     return {
         title: `Project | ${project.name}`,
         description: project.excerpt,
@@ -30,6 +38,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function Project({ params }: Props) {
 
     const project = projects[params.slug]
+
+    if (project === undefined)
+        return <ProjectNotFound />
 
     const features = project.features?.map((feature: string, index: number) => {
         return <li key={index} className={"mt-4"}>{feature}</li>

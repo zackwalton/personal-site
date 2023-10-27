@@ -1,12 +1,13 @@
 import React from "react";
 import projects from "@/app/projects";
+import Link from "next/link";
 
 export default function ProjectList() {
 
     const project_list = Object.values(projects).map((project: any, index: number) => {
         return <li key={index} className={"mb-4"}>
-            <a href={`/projects/${project.slug}`}
-               className={"light-accent light-link dark:dark-accent dark:dark-link text-2xl font-eigerdals"}>{project.name}</a>
+            <Link href={`/projects/${project.slug}`}
+                  className={"light-accent light-link dark:dark-accent dark:dark-link text-2xl font-eigerdals"}>{project.name}</Link>
             <p>{project.excerpt}.</p>
         </li>
     });

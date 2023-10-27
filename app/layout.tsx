@@ -27,16 +27,16 @@ export default function RootLayout({ children, }: { children: React.ReactNode })
         <body className={`${openSans.variable} ${eigerdals.variable}` +
             " bg-white text-[--text-light] dark:bg-[--bg-dark] dark:text-[--text-dark]"}>
         <script dangerouslySetInnerHTML={{
-                __html: `
-                    try {
-                      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        document.documentElement.classList.add('dark')
-                      } else {
-                        document.documentElement.classList.remove('dark')
-                      }
-                    } catch (_) {}
-                  `
-            }} />
+            __html: `
+                try {
+                  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark')
+                  } else {
+                    document.documentElement.classList.remove('dark')
+                  }
+                } catch (_) {}
+              `
+        }} />
         <div className={"flex flex-nowrap items-center justify-center h-fit"}>
             <div className={"relative w-full lg:w-[1000px] h-fit p-2 md:p-4 lg:p-0 mt-5 md:mt-28"}>
                 <ThemeHandler />
