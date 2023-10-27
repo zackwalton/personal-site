@@ -20,19 +20,19 @@ export default function Home() {
                 <a href="projects/disclate"
                    className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}
                 >disclate<strong>, translation bot</strong></a>
-                <p className={"text-xs pl-2 md:pl-5 pt-5"}>Python, SQL, Discord API, Google Cloud Translation API,
+                <p className={"text-xs pl-2 md:pl-5 pt-1 md:pt-5"}>Python, SQL, Discord API, Google Cloud Translation API,
                     GPT-4 API</p><br />
 
                 <a href="projects/planning-poker"
                    className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>
                     sprint plan <strong>&</strong> websockets</a><br />
-                <p className={"text-xs pl-5 pt-5"}>Web Sockets (socket.io), Next.js, React, Redis, MUI</p>
+                <p className={"text-xs pl-2 md:pl-5 pt-1 md:pt-5"}>Web Sockets (socket.io), Next.js, React, Redis, MUI</p>
                 <br />
 
                 <a href="projects/"
                    className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>
                     security <strong>, </strong>graphics<strong> & </strong>more</a>
-                <p className={"text-xs pl-5 pt-5"}>More projects!</p><br />
+                <p className={"text-xs pl-2 md:pl-5 pt-1 md:pt-5"}>More projects!</p><br />
 
             </div>
             <SocialLinks className={"mt-32 pb-4"} />
