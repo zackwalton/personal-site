@@ -33,7 +33,7 @@ export default function Home() {
                 </p><br />
 
                 <Link href={`projects/${project2}`}
-                      className={"light-accent light-link dark:dark-accent dark:dark-link "}>
+                      className={"light-accent light-link dark:dark-accent dark:dark-link font-eigerdals"}>
                     scrum <strong>&</strong> websockets</Link><br />
                 <p className={"text-xs pl-2 md:pl-5 pt-1 md:pt-5"}>
                     Web Sockets (socket.io), Next.js, React, Redis, MUI
