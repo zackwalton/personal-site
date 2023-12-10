@@ -34,7 +34,7 @@ const projects: Record<string, ProjectData> = {
             "Create translation \"links\" between channels, messages are then automatically translated and sent to all linked channels",
             "Translate messages to multiple languages at once (Google Cloud Translation API)",
             "Translate messages to fun languages such as English Pirate (that be the GPT3.5 & GPT4 API)",
-            "Guild owners will be able to purchase a monthly subscription to get a higher translation character limits"
+            "Guild owners will be able to purchase a monthly subscription to get a higher translation character limit"
         ],
         "technologies": [
             "Python",
@@ -54,8 +54,8 @@ const projects: Record<string, ProjectData> = {
         "features": [
             "Responsive website using both server-side and client-side rendering (Next.js, React)",
             "Continuous deployment (CD) using Vercel",
-            "Tailwind CSS + CSS for quick styling and prototyping",
-            "Full end-to-end type safety using TypeScript"
+            "TailwindCSS for quick styling and prototyping",
+            "Built with TypeScript for type safety and code readability",
         ],
         "technologies": [
             "Next.js (App directory)",
