@@ -17,7 +17,7 @@ export default function Home() {
             <div className={"flex flex-col gap-3 md:gap-1 text-center md:text-left leading-6 md:leading-6 md:pl-3"}>
                 <p className={"mt-20"}>
                     I’m from <span className={"italic"}>Ottawa, Ontario</span> living in
-                    <span className={"italic"}> Montréal, Canada</span>.
+                    <span className={"italic"}> Montréal, Québec</span>.
                 </p>
                 <p>I study Computer Science at Concordia University.</p>
                 <p>I build full-stack web and python applications!</p>
